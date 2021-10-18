@@ -16,8 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+       primaryColorLight: Colors.deepPurpleAccent,
       ),
+      themeMode: ThemeMode.light,
       initialRoute: 'pagina1',
       routes: {
         'pagina1': ( _ ) => const Pagina1Page(),

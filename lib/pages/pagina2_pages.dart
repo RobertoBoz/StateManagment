@@ -10,6 +10,7 @@ class Pagina2Page extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Pagina 2'),
         centerTitle: true,
+        backgroundColor: Theme.of(context).primaryColorLight,
       ),
       body: Center(
         child: Column(
@@ -17,20 +18,18 @@ class Pagina2Page extends StatelessWidget {
             MaterialButton(
               onPressed: (){},
               child: const Text('Establecer Usuarios',style: TextStyle(color: Colors.white)),
-              color: Colors.purple
+              color: Theme.of(context).primaryColorLight
             ),
             MaterialButton(
               onPressed: (){},
               child: const Text('Cambiar Edad',style: TextStyle(color: Colors.white)),
-              color: Colors.purple
+              color:Theme.of(context).primaryColorLight
             ),
             MaterialButton(
               onPressed: (){},
               child: const Text('Añadir Profesion',style: TextStyle(color: Colors.white)),
-              color: Colors.purple
+              color: Theme.of(context).primaryColorLight
             ),
-
-
           ]
         ),
       ),

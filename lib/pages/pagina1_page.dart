@@ -11,10 +11,12 @@ class Pagina1Page extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Pagina 1'),
         centerTitle: true,
+        backgroundColor: Theme.of(context).primaryColorLight,
       ),
       body: const InformacionUsuario(),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.ac_unit),
+        backgroundColor: Theme.of(context).primaryColorLight,
         onPressed: () => Navigator.pushNamed(context, 'pagina2'),
       ),
     );
