@@ -17,7 +17,14 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
        primaryColorLight: Colors.deepPurpleAccent,
+       textTheme:const TextTheme(
+        bodyText1: TextStyle(fontSize: 15),
+        subtitle1: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+        button: TextStyle(color: Colors.white)
       ),
+       
+      ),
+    
       themeMode: ThemeMode.light,
       initialRoute: 'pagina1',
       routes: {

@@ -37,16 +37,16 @@ class InformacionUsuario extends StatelessWidget {
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column( 
-          children: const <Widget> [
-            Text('General', style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold), ),
-            Divider(),
-            ListTile(title: Text('Nombre: '),),
-            ListTile(title: Text('Edad: '),),
-            Text('Profesiones', style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold), ),
-            Divider(),
-            ListTile(title: Text('Profesiones: 1'),),
-            ListTile(title: Text('Profesiones: 1'),),
-            ListTile(title: Text('Profesiones: 1'),),
+          children: <Widget> [
+            Text('General', style: Theme.of(context).textTheme.subtitle1, ),
+            const Divider(),
+            ListTile(title: Text('Nombre: ',style:Theme.of(context).textTheme.bodyText1,),),
+            ListTile(title: Text('Edad: ',style:Theme.of(context).textTheme.bodyText1),),
+            Text('Profesiones', style: Theme.of(context).textTheme.subtitle1,  ),
+            const Divider(),
+             ListTile(title: Text('Profesiones: 1',style:Theme.of(context).textTheme.bodyText1),),
+             ListTile(title: Text('Profesiones: 1',style:Theme.of(context).textTheme.bodyText1),),
+             ListTile(title: Text('Profesiones: 1',style:Theme.of(context).textTheme.bodyText1),),
 
           ]
         ),

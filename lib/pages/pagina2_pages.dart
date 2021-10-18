@@ -17,17 +17,17 @@ class Pagina2Page extends StatelessWidget {
           children: <Widget>[
             MaterialButton(
               onPressed: (){},
-              child: const Text('Establecer Usuarios',style: TextStyle(color: Colors.white)),
+              child: Text('Establecer Usuarios',style: Theme.of(context).textTheme.button),
               color: Theme.of(context).primaryColorLight
             ),
             MaterialButton(
               onPressed: (){},
-              child: const Text('Cambiar Edad',style: TextStyle(color: Colors.white)),
+              child: Text('Cambiar Edad',style: Theme.of(context).textTheme.button),
               color:Theme.of(context).primaryColorLight
             ),
             MaterialButton(
               onPressed: (){},
-              child: const Text('Añadir Profesion',style: TextStyle(color: Colors.white)),
+              child: Text('Añadir Profesion',style: Theme.of(context).textTheme.button),
               color: Theme.of(context).primaryColorLight
             ),
           ]
