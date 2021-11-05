@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:statemanagement/Models/model_usuario.dart';
+import 'package:statemanagement/services/usuario_services.dart';
 
 class Pagina1Page extends StatelessWidget {
 
@@ -7,13 +10,19 @@ class Pagina1Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final usuarioService = Provider.of<UsuarioService>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Pagina 1'),
         centerTitle: true,
         backgroundColor: Theme.of(context).primaryColorLight,
+        actions: [
+          IconButton(onPressed: (){ usuarioService.borraredad();}, icon: const Icon(Icons.delete))
+        ],
       ),
-      body: const InformacionUsuario(),
+      body: (usuarioService.existeUsuario) ? InformacionUsuario(user: usuarioService.usuario,) : const Center(child: Text('No hay usuario.'),),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.ac_unit),
         backgroundColor: Theme.of(context).primaryColorLight,
@@ -24,8 +33,9 @@ class Pagina1Page extends StatelessWidget {
 }
 
 class InformacionUsuario extends StatelessWidget {
+  final Usuario? user;
   const InformacionUsuario({
-    Key? key,
+    Key? key, required this.user,
   }) : super(key: key);
 
   @override
@@ -40,14 +50,14 @@ class InformacionUsuario extends StatelessWidget {
           children: <Widget> [
             Text('General', style: Theme.of(context).textTheme.subtitle1, ),
             const Divider(),
-            ListTile(title: Text('Nombre: ',style:Theme.of(context).textTheme.bodyText1,),),
-            ListTile(title: Text('Edad: ',style:Theme.of(context).textTheme.bodyText1),),
+            ListTile(title: Text('Nombre: ${user?.nombre}',style:Theme.of(context).textTheme.bodyText1,),),
+            ListTile(title: Text('Edad: ${user?.edad}',style:Theme.of(context).textTheme.bodyText1),),
             Text('Profesiones', style: Theme.of(context).textTheme.subtitle1,  ),
             const Divider(),
-             ListTile(title: Text('Profesiones: 1',style:Theme.of(context).textTheme.bodyText1),),
-             ListTile(title: Text('Profesiones: 1',style:Theme.of(context).textTheme.bodyText1),),
-             ListTile(title: Text('Profesiones: 1',style:Theme.of(context).textTheme.bodyText1),),
-
+            ...user!.profesiones!.map(
+              (profesion) => ListTile(title: Text(profesion),)
+            ).toList()
+               
           ]
         ),
       )
