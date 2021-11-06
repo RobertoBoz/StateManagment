@@ -15,6 +15,12 @@ class Pagina1Page extends StatelessWidget {
         title: const Text('Pagina 1'),
         centerTitle: true,
         backgroundColor: Theme.of(context).primaryColorLight,
+        actions: [
+          IconButton(onPressed: (){
+            context.read<UsuarioCubit>().borrarUsuario();
+          },
+          icon: const Icon(Icons.delete))
+        ],
       ),
       body: const BodyScafold(),
       floatingActionButton: FloatingActionButton(
