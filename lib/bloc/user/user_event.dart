@@ -19,3 +19,5 @@ class AddProfetion extends UserEvent {
 
   AddProfetion(this.profeciones);
 }
+
+class DeleteUser extends UserEvent {}

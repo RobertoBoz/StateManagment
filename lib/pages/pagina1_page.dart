@@ -13,6 +13,14 @@ class Pagina1Page extends StatelessWidget {
         title: const Text('Pagina 1'),
         centerTitle: true,
         backgroundColor: Theme.of(context).primaryColorLight,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.delete),
+            onPressed: () {
+              BlocProvider.of<UserBloc>(context).add(DeleteUser());
+            },
+          )
+        ],
       ),
       body: BlocBuilder<UserBloc, UserState>(builder: (_, state) {
         return state.existUser
